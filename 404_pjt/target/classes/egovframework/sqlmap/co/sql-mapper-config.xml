@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+   <settings>
+        <setting name="cacheEnabled" value="true" />
+        <setting name="defaultExecutorType" value="REUSE"></setting>
+        <setting name="lazyLoadingEnabled" value="false" />
+        <setting name="multipleResultSetsEnabled" value="true" />
+        <setting name="useColumnLabel" value="true" />
+        <setting name="useGeneratedKeys" value="true" />
+        <setting name="callSettersOnNulls" value="true"/>
+        <setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	
+	<typeAliases>
+        <typeAlias alias="map" type="java.util.Map" />
+		<typeAlias alias="hashMap" type="java.util.HashMap" />
+		<typeAlias alias="resultMap" type="org.apache.commons.collections.map.CaseInsensitiveMap"/>
+		<typeAlias alias="egovMap" type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
+	</typeAliases>
+</configuration>

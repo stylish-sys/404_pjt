@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MnMapper">
+
+	<select id="selectMberList" resultType="egovMap">
+
+			SELECT
+				mber_sn
+				,mber_id
+				,mber_pw
+				,email
+				,kakao_key
+				,naver_key
+				,create_dt
+				,create_id
+				,modify_dt
+				,modify_id
+			FROM devslecs.fof_mber_master
+
+	</select>
+</mapper>
