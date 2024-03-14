@@ -19,7 +19,7 @@
 	<head>
 		<title>Main</title>  
 		<script type="text/javascript">
-			location.href="/mberSample";
+			location.href="/sampleList";
 		</script>
 	</head>
 	<body>

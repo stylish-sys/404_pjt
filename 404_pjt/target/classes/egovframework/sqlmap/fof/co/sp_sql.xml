@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spMapper">
+	<select id="selectSpList" resultType="egovMap">
+		SELECT
+			sample_sn
+			,user_id 
+			,create_dt
+			,create_id
+			,modify_dt
+			,modify_id
+		FROM devslecs.fof_sample
+		<include refid="cmm_sql.orderByRegDtSql" />  
+	</select>
+	
+	<insert id="insertSp" parameterType = "egovMap">
+		INSERT INTO devslecs.fof_sample
+		(
+			sample_sn
+			,user_id 
+			,create_dt
+			,create_id
+			,modify_dt
+			,modify_id
+		)VALUES(
+			(SELECT IFNULL(MAX(sample_sn), 0) + 1 FROM devslecs.fof_sample)
+			,#{userId}
+			,SYSDATE()
+			,#{userId}
+			,SYSDATE()
+			,#{userId}
+		)
+	</insert>
+	
+	
+	<update id="updateSp" parameterType = "egovMap">
+		UPDATE devslecs.fof_sample
+		SET
+		    user_id = #{userId}
+		    ,modify_dt = SYSDATE()
+		    ,modify_id = #{userId}
+		WHERE
+		    sample_sn = #{sampleSn}
+	</update>
+	
+	<select id = "selectSpInfo" parameterType = "egovMap" resultType = "egovMap">
+		SELECT
+			sample_sn
+			,user_id 
+			,create_dt
+			,create_id
+			,modify_dt
+			,modify_id
+		FROM devslecs.fof_sample
+		WHERE
+			sample_sn = #{sampleSn}
+	</select>
+</mapper>

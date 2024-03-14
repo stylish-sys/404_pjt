@@ -19,6 +19,7 @@
 		
 		<!-- container -->
 		<div id="container">
+			컨텐츠 전용
 			<c:import url="/WEB-INF/jsp/fof/${content}"/>
 		</div>
 		<!-- //container --> 				
